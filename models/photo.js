@@ -1,0 +1,12 @@
+const mongoose =  require('mongoose');
+const { Schema } = mongoose;
+
+const PhotoSchema = new Schema({
+    name: { type: String, required: true },
+    image: { type: String, required: true },
+    date: {type: Date, default: Date.now,}
+  });
+
+  const Sailor = mongoose.model('Sailor', PhotoSchema);
+
+  module.exports =Sailor

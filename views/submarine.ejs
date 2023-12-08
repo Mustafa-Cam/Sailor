@@ -1,0 +1,58 @@
+<!-- views/submarine.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Denizaltılar</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Your custom styles -->
+    <style>
+        body {
+            padding-top: 3.5rem;
+        }
+        .submarine-card {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<%- include('partials/navbar', { pageTitle: 'Denizaltılar' }) %>
+
+<!-- Content -->
+<main class="container mt-5">
+    <h2 class="mb-4">Denizaltılar</h2>
+
+    <div class="row">
+        <% for (let i = 1; i <= 3; i++) { %>
+            <div class="col-md-4">
+                <div class="card submarine-card">
+                    <img src="/images/submarine<%= i %>.jpg" class="card-img-top" alt="Denizaltı <%= i %>">
+                    <div class="card-body">
+                        <h5 class="card-title">Denizaltı <%= i %></h5>
+                        <p class="card-text">Bu denizaltı hakkında kısa bilgi.</p>
+                        <a href="#" class="btn btn-primary">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-light text-center py-3 fixed-bottom">
+    <div class="container">
+        <p>&copy; 2023 Denzici Web Sayfası</p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS ve Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
